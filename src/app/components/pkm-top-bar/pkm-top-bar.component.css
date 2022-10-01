@@ -1,0 +1,9 @@
+.header{
+  @apply w-full h-16 flex justify-between items-center px-4 drop-shadow-md
+}
+.header-fav_widget{
+  @apply flex
+}
+.header-fav_widget-count{
+  @apply bg-red-600 text-white font-bold text-xs py-1 px-2 rounded-full z-10 -mx-2 my-2 -mt-2
+}

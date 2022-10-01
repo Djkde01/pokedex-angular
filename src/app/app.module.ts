@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PkmTopBarComponent } from './components/pkm-top-bar/pkm-top-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PkmTopBarComponent
   ],
   imports: [
     BrowserModule,
