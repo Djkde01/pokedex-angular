@@ -1,0 +1,20 @@
+<section class="pkmlist">
+  <div class="pkmcard" *ngFor="let pokemon of pokemons">
+    <figure class="pkmcard-img">
+      <img [src]="pokemon.sprites.front_default" />
+    </figure>
+    <div class="pkmcard-info">
+      <p class="pkmcard-info-id">{{ pokemon.id }}</p>
+      <h6 class="pkmcard-info-name">{{ pokemon.name }}</h6>
+      <ul class="pkmcard-types">
+        <li class="pkmcard-types-item" *ngFor="let type of pokemon.types">
+          {{ type.type.name }}
+        </li>
+      </ul>
+    </div>
+    <PkmFavButton
+      class="pkmcard-fav"
+      (click)="saveFavList(pokemon)"
+    ></PkmFavButton>
+  </div>
+</section>
