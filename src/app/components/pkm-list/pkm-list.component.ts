@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { DataService } from 'src/app/service/data.service';
 export class PkmListComponent implements OnInit {
   pokemons: any[] = [];
   favList: Set<any> = new Set();
+  @Output() favCount = new EventEmitter<number>();
 
   constructor(private dataService: DataService) {}
 
@@ -20,6 +21,9 @@ export class PkmListComponent implements OnInit {
     }
     const favArray = Array.from(this.favList);
     localStorage.setItem('favList', JSON.stringify(favArray));
+    this.favCount.emit(
+      JSON.parse(localStorage.getItem('favList') || '{}').length
+    );
   }
 
   ngOnInit(): void {

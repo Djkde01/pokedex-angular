@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'PkmTopBar',
@@ -7,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PkmTopBarComponent implements OnInit {
   logo: string = '/assets/logo.svg';
-  favCount = localStorage.getItem('favList')?.length;
-
-  constructor() {}
+  @Input() favCount: number = 0;
 
   ngOnInit(): void {}
 }

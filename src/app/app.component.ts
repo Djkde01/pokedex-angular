@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Pokedex';
+  favCount: number = 0;
+
+  onLoaded(count: number) {
+    this.favCount = count;
+  }
 }

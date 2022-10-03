@@ -1,5 +1,5 @@
-<PkmTopBar></PkmTopBar>
+<PkmTopBar [favCount]="favCount"></PkmTopBar>
 <main class="main-list">
   <h1 class="main-list-title">Pokemones</h1>
-  <PkmList></PkmList>
+  <PkmList (favCount)="onLoaded($event)"></PkmList>
 </main>
