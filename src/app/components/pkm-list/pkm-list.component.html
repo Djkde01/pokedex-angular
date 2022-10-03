@@ -1,4 +1,4 @@
-<main class="pkmlist">
+<section class="pkmlist">
   <div class="pkmcard" *ngFor="let pokemon of pokemons">
     <figure class="pkmcard-img">
       <img [src]="pokemon.sprites.front_default" />
@@ -14,4 +14,4 @@
     </div>
     <PkmFavButton class="pkmcard-fav"></PkmFavButton>
   </div>
-</main>
+</section>

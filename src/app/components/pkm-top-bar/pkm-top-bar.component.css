@@ -1,5 +1,5 @@
 .header{
-  @apply w-full h-16 flex justify-between items-center px-4 drop-shadow-md
+  @apply w-full h-16 flex justify-between items-center px-4 drop-shadow-md bg-white mb-7
 }
 .header-fav_widget{
   @apply flex
