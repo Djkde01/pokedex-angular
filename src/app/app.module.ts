@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PkmTopBarComponent } from './components/pkm-top-bar/pkm-top-bar.component';
 import { PkmButtonComponent } from './components/pkm-button/pkm-button.component';
+import { PkmFavButtonComponent } from './components/pkm-fav-button/pkm-fav-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PkmTopBarComponent,
-    PkmButtonComponent
+    PkmButtonComponent,
+    PkmFavButtonComponent
   ],
   imports: [
     BrowserModule,
