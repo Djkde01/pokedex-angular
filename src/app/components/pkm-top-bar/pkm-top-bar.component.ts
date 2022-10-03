@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PkmTopBarComponent implements OnInit {
   logo: string = '/assets/logo.svg';
-  favCount = localStorage.getItem('favList')?.length || 0;
+  favCount = localStorage.getItem('favList')?.length;
 
   constructor() {}
 
