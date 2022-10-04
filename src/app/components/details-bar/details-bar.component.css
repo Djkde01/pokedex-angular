@@ -1,6 +1,9 @@
 .details-bar {
-  @apply w-full px-7;
+  @apply w-full px-7 flex gap-5 items-center mb-7;
 }
 .details-bar-icon {
   @apply cursor-pointer;
+}
+.details-bar-text {
+  @apply font-bold;
 }
