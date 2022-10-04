@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PkmButtonComponent implements OnInit {
   @Input() type: string = 'secondary';
+  @Input() text: string = '';
   constructor() {}
 
   ngOnInit(): void {}
