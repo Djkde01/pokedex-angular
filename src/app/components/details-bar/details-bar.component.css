@@ -1,0 +1,6 @@
+.details-bar {
+  @apply w-full px-7;
+}
+.details-bar-icon {
+  @apply cursor-pointer;
+}

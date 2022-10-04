@@ -11,6 +11,7 @@ import { PkmListComponent } from './components/pkm-list/pkm-list.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { FavComponent } from './pages/fav/fav.component';
 import { HomeComponent } from './pages/home/home.component';
+import { DetailsBarComponent } from './components/details-bar/details-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HomeComponent } from './pages/home/home.component';
     DetailsComponent,
     FavComponent,
     HomeComponent,
+    DetailsBarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
