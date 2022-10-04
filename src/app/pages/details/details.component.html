@@ -1,1 +1,32 @@
-<p>details works!</p>
+<DetailsBar></DetailsBar>
+
+<main *ngIf="pokemonData.length > 0; else elseBlock" class="detailslist">
+  <section *ngFor="let pokemon of pokemonData" class="detailscard">
+    <figure class="detailscard-img">
+      <img [src]="pokemon.sprites.front_default" class="detailscard-img-src" />
+    </figure>
+    <div class="detailscard-info">
+      <h6 class="detailscard-info-name">{{ pokemon.name }}</h6>
+      <ul class="detailscard-types">
+        <li class="detailscard-types-item" *ngFor="let type of pokemon.types">
+          {{ type.type.name }}
+        </li>
+      </ul>
+      <p>{{ speciesData[0].flavor_text }}</p>
+      <p>
+        <b>ID: </b>
+        {{ pokemon.id }}
+      </p>
+      <p><b>Altura: </b> {{ pokemon.height }}</p>
+      <p><b>Peso: </b> {{ pokemon.weight }}</p>
+      <PkmButton
+        type="primary"
+        (click)="saveFavList(pokemon)"
+        text="Añadir a favoritos"
+      ></PkmButton>
+    </div>
+  </section>
+</main>
+<ng-template #elseBlock>
+  <p>Pokemon not found</p>
+</ng-template>

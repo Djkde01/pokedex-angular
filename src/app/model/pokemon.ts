@@ -77,7 +77,7 @@ export interface Pokemon {
   base_experience: number;
   forms: Array<Details>;
   game_indices: Array<GameIndex>;
-  heigth: number;
+  height: number;
   held_items: Array<HeldItem>;
   id: number;
   is_default: boolean;
@@ -90,5 +90,5 @@ export interface Pokemon {
   sprites: Sprite;
   stats: Array<Stat>;
   types: Array<Type>;
-  weigth: number;
+  weight: number;
 }

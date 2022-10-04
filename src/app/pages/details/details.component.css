@@ -1,0 +1,25 @@
+.detailslist {
+  @apply lg:w-4/5 md:w-3/5 w-11/12 mx-auto;
+}
+
+.detailscard {
+  @apply w-full grid lg:grid-cols-2 lg:grid-rows-1 grid-rows-2 grid-cols-1 md:px-3 px-2 rounded-lg;
+}
+.detailscard-img {
+  @apply flex items-center justify-center;
+}
+.detailscard-img-src {
+  @apply w-56 h-56;
+}
+.detailscard-info {
+  @apply flex flex-col justify-center gap-4 bg-white rounded-2xl p-6;
+}
+.detailscard-info-name {
+  @apply capitalize font-bold mb-2 text-center text-3xl;
+}
+.detailscard-types {
+  @apply flex flex-row gap-1 justify-center;
+}
+.detailscard-types-item {
+  @apply bg-slate-200	py-1 px-2 rounded-lg;
+}
