@@ -10,7 +10,7 @@ import { DataService } from 'src/app/service/data.service';
 export class HomeComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
-  favCount: number = 0;
+  @Output() favCount: number = 0;
   pokemons: Array<Pokemon> = [];
   limit: number = 12;
   offset: number = 0;

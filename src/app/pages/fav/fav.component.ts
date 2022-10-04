@@ -12,4 +12,8 @@ export class FavComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  updateFavList() {
+    this.favList = JSON.parse(localStorage.getItem('favList') || '[]');
+  }
 }
