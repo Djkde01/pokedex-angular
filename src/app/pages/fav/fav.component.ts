@@ -7,7 +7,7 @@ import { Pokemon } from 'src/app/model/pokemon';
   styleUrls: ['./fav.component.css'],
 })
 export class FavComponent implements OnInit {
-  favList: Array<Pokemon> = JSON.parse(localStorage.getItem('favList') || '{}');
+  favList: Array<Pokemon> = JSON.parse(localStorage.getItem('favList') || '[]');
 
   constructor() {}
 

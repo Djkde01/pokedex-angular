@@ -8,21 +8,24 @@ import { Pokemon } from 'src/app/model/pokemon';
 })
 export class PkmListComponent implements OnInit {
   @Input() pokemons: Array<Pokemon> = [];
-  favList: Set<any> = new Set();
   @Output() favCount = new EventEmitter<number>();
 
   constructor() {}
 
   saveFavList(pokemon: Pokemon) {
-    if (this.favList.has(pokemon)) {
-      this.favList.delete(pokemon);
-    } else {
-      this.favList.add(pokemon);
+    const currentFavArray = JSON.parse(localStorage.getItem('favList') || '[]');
+
+    const newFavArray = currentFavArray.filter(
+      (favElement: Pokemon) =>
+        JSON.stringify(favElement) !== JSON.stringify(pokemon)
+    );
+
+    if (currentFavArray.length === newFavArray.length) {
+      newFavArray.push(pokemon);
     }
-    const favArray = Array.from(this.favList);
-    localStorage.setItem('favList', JSON.stringify(favArray));
+    localStorage.setItem('favList', JSON.stringify(newFavArray));
     this.favCount.emit(
-      JSON.parse(localStorage.getItem('favList') || '{}').length
+      JSON.parse(localStorage.getItem('favList') || '[]').length
     );
   }
 
