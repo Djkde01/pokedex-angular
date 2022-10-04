@@ -1,4 +1,11 @@
 <DetailsBar text="Favoritos"></DetailsBar>
 <main class="main-list">
-  <PkmList [pokemons]="favList"></PkmList>
+  <PkmList
+    *ngIf="favList.length > 0; else elseBlock"
+    [pokemons]="favList"
+    (onFavAdd)="updateFavList()"
+  ></PkmList>
+  <ng-template #elseBlock>
+    <p>No hay favoritos aún</p>
+  </ng-template>
 </main>

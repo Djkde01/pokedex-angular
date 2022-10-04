@@ -43,7 +43,7 @@ export class DetailsComponent implements OnInit {
           if (this.pokemonName) {
             return this.dataService.getPokemonDetails(this.pokemonName);
           }
-          return [];
+          return 'Not found';
         })
       )
       .subscribe((data: any) => {
@@ -66,7 +66,6 @@ export class DetailsComponent implements OnInit {
         this.speciesData = data.flavor_text_entries.filter(
           (species: any) => species.language.name === 'es'
         );
-        console.log(this.speciesData);
       });
   }
 }

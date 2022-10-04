@@ -8,7 +8,8 @@ import { Pokemon } from 'src/app/model/pokemon';
 })
 export class PkmListComponent implements OnInit {
   @Input() pokemons: Array<Pokemon> = [];
-  @Output() favCount = new EventEmitter<number>();
+  @Output() favCount: EventEmitter<number> = new EventEmitter<number>();
+  @Output() onFavAdd: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {}
 
@@ -24,9 +25,14 @@ export class PkmListComponent implements OnInit {
       newFavArray.push(pokemon);
     }
     localStorage.setItem('favList', JSON.stringify(newFavArray));
+    this.emitEvents();
+  }
+
+  emitEvents() {
     this.favCount.emit(
       JSON.parse(localStorage.getItem('favList') || '[]').length
     );
+    this.onFavAdd.emit();
   }
 
   ngOnInit(): void {}
