@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Pokemon } from 'src/app/model/pokemon';
 import { DataService } from 'src/app/service/data.service';
 
@@ -15,6 +15,21 @@ export class HomeComponent implements OnInit {
   limit: number = 12;
   offset: number = 0;
 
+  loadMore(): void {
+    this.dataService
+      .getAllPokemons(this.limit, this.offset)
+      .subscribe((response: any) => {
+        response.results.forEach((result: Pokemon) => {
+          this.dataService
+            .getPokemonDetails(result.name)
+            .subscribe((pokemonResponse: any) =>
+              this.pokemons.push(pokemonResponse)
+            );
+        });
+        this.offset += this.limit;
+      });
+  }
+
   onLoaded(count: number) {
     this.favCount = count;
   }
@@ -30,6 +45,7 @@ export class HomeComponent implements OnInit {
               this.pokemons.push(pokemonResponse)
             );
         });
+        this.offset += this.limit;
       });
   }
 }

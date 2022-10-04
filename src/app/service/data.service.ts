@@ -11,9 +11,9 @@ export class DataService {
 
   //Get all
 
-  getAllPokemons() {
+  getAllPokemons(limit: number, offset: number) {
     return this.http.get<InitialList[]>(
-      'https://pokeapi.co/api/v2/pokemon?limit=12'
+      `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
     );
   }
 

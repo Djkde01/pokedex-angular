@@ -8,5 +8,5 @@
   @apply bg-red-600 text-white;
 }
 .pkmbutton-secondary{
-  @apply bg-slate-100 text-black;
+  @apply bg-slate-200 text-black;
 }
