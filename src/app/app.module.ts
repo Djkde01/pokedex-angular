@@ -8,6 +8,9 @@ import { PkmTopBarComponent } from './components/pkm-top-bar/pkm-top-bar.compone
 import { PkmButtonComponent } from './components/pkm-button/pkm-button.component';
 import { PkmFavButtonComponent } from './components/pkm-fav-button/pkm-fav-button.component';
 import { PkmListComponent } from './components/pkm-list/pkm-list.component';
+import { DetailsComponent } from './pages/details/details.component';
+import { FavComponent } from './pages/fav/fav.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { PkmListComponent } from './components/pkm-list/pkm-list.component';
     PkmButtonComponent,
     PkmFavButtonComponent,
     PkmListComponent,
+    DetailsComponent,
+    FavComponent,
+    HomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

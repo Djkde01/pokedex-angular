@@ -1,5 +1,6 @@
-<PkmTopBar></PkmTopBar>
-<main class="main-list">
+<PkmTopBar [favCount]="favCount"></PkmTopBar>
+<router-outlet></router-outlet>
+<!--<main class="main-list">
   <h1 class="main-list-title">Pokemones</h1>
-  <PkmList></PkmList>
-</main>
+  <PkmList (favCount)="onLoaded($event)"></PkmList>
+</main>-->

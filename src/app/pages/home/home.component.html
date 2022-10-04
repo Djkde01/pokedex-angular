@@ -1,0 +1,7 @@
+<main class="main-list">
+  <h1 class="main-list-title">Pokemones</h1>
+  <PkmList (favCount)="onLoaded($event)" [pokemons]="pokemons"></PkmList>
+  <div class="main-list-button">
+    <PkmButton (click)="loadMore()" text="Ver más"></PkmButton>
+  </div>
+</main>

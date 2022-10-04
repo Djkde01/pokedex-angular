@@ -1,12 +1,10 @@
+.pkmbutton {
+  @apply uppercase font-bold rounded-lg py-3 px-4 w-full;
+}
 
-  .pkmbutton{
-    @apply uppercase font-bold rounded-lg py-3 px-4
-  }
-
-
-.pkmbutton-primary{
+.pkmbutton-primary {
   @apply bg-red-600 text-white;
 }
-.pkmbutton-secondary{
-  @apply bg-slate-100 text-black;
+.pkmbutton-secondary {
+  @apply bg-slate-200 text-black;
 }

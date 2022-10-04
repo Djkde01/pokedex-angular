@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/service/data.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Pokemon } from 'src/app/model/pokemon';
 
 @Component({
   selector: 'PkmList',
@@ -7,12 +7,13 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./pkm-list.component.css'],
 })
 export class PkmListComponent implements OnInit {
-  pokemons: any[] = [];
+  @Input() pokemons: Array<Pokemon> = [];
   favList: Set<any> = new Set();
+  @Output() favCount = new EventEmitter<number>();
 
-  constructor(private dataService: DataService) {}
+  constructor() {}
 
-  saveFavList(pokemon: any) {
+  saveFavList(pokemon: Pokemon) {
     if (this.favList.has(pokemon)) {
       this.favList.delete(pokemon);
     } else {
@@ -20,17 +21,10 @@ export class PkmListComponent implements OnInit {
     }
     const favArray = Array.from(this.favList);
     localStorage.setItem('favList', JSON.stringify(favArray));
+    this.favCount.emit(
+      JSON.parse(localStorage.getItem('favList') || '{}').length
+    );
   }
 
-  ngOnInit(): void {
-    this.dataService.getAllPokemons().subscribe((response: any) => {
-      response.results.forEach((result: any) => {
-        this.dataService
-          .getPokemonDetails(result.name)
-          .subscribe((pokemonResponse: any) =>
-            this.pokemons.push(pokemonResponse)
-          );
-      });
-    });
-  }
+  ngOnInit(): void {}
 }
