@@ -1,6 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pokemon } from 'src/app/model/pokemon';
-import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'PkmList',
@@ -8,11 +7,11 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./pkm-list.component.css'],
 })
 export class PkmListComponent implements OnInit {
-  pokemons: Array<Pokemon> = [];
+  @Input() pokemons: Array<Pokemon> = [];
   favList: Set<any> = new Set();
   @Output() favCount = new EventEmitter<number>();
 
-  constructor(private dataService: DataService) {}
+  constructor() {}
 
   saveFavList(pokemon: Pokemon) {
     if (this.favList.has(pokemon)) {
@@ -27,15 +26,5 @@ export class PkmListComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {
-    this.dataService.getAllPokemons().subscribe((response: any) => {
-      response.results.forEach((result: Pokemon) => {
-        this.dataService
-          .getPokemonDetails(result.name)
-          .subscribe((pokemonResponse: any) =>
-            this.pokemons.push(pokemonResponse)
-          );
-      });
-    });
-  }
+  ngOnInit(): void {}
 }

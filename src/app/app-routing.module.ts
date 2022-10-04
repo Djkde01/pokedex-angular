@@ -1,10 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { DetailsComponent } from './pages/details/details.component';
+import { FavComponent } from './pages/fav/fav.component';
+import { HomeComponent } from './pages/home/home.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+  },
+  {
+    path: 'fav',
+    component: FavComponent,
+  },
+  {
+    path: 'details',
+    component: DetailsComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
