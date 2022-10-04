@@ -20,4 +20,7 @@ export class DataService {
   getPokemonDetails(name: string) {
     return this.http.get<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
+  getSpeciesDetails(name: string) {
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon-species/${name}`);
+  }
 }

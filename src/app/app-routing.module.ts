@@ -15,7 +15,7 @@ const routes: Routes = [
     component: FavComponent,
   },
   {
-    path: 'details',
+    path: 'details/:name',
     component: DetailsComponent,
   },
 ];
