@@ -1,7 +1,9 @@
 <header class="header">
-  <img [src]="logo" alt="Pokedex logo" />
-  <div class="header-fav_widget">
+  <a href="/">
+    <img [src]="logo" alt="Pokedex logo" />
+  </a>
+  <a class="header-fav_widget" href="/fav">
     <img src="/assets/heart-filled.svg" />
     <p class="header-fav_widget-count">{{ favCount }}</p>
-  </div>
+  </a>
 </header>
